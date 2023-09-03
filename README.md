@@ -42,7 +42,8 @@ In the industry, prognostics and health management are key topics for anticipati
 ## Installation and Setup
 
 1. Clone this repository: `git clone https://github.com/shrutidhange/PredictiveMaintenance-Internship.git`
-2. Install the required dependencies: `pip install -r requirements.txt`
+2. Host the FLASK API named RUL_Pred.py and User Internface RUL_Pred_UI.html
+3. Add the pickle files also to the server since those are required by RUL_Pred.py FLASK API code
 
 ## Usage
 
