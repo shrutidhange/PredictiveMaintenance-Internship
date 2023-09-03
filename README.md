@@ -49,9 +49,7 @@ In the industry, prognostics and health management are key topics for anticipati
 
 1. Prepare the data and preprocess it using the scripts in the `data_preprocessing` directory.
 2. Train the machine learning models using the scripts in the `model_training` directory.
-3. Deploy the best-performing model as a real-time prediction API using the deployment script in the `deployment` directory.
-4. Launch the web-based dashboard using the command: `python dashboard.py`.
-5. Monitor the model's performance using the monitoring script in the `monitoring` directory.
+3. Deploy the best-performing model as a real-time prediction API using the steps as mentioned in the installation and setup above
 
 ## Model Training
 
@@ -59,16 +57,11 @@ In the industry, prognostics and health management are key topics for anticipati
 - Use hyperparameter tuning techniques like Grid Search or Random Search to optimize model performance.
 - Evaluate the models using validation data and choose the best-performing model for deployment.
 
-## Web Dashboard
+## Web API and UI
 
-- The web-based dashboard provides an intuitive interface to visualize engine health and RUL predictions.
-- Access the dashboard by running the `dashboard.py` script.
-- Interact with the dashboard to explore individual engine details and historical predictions.
-
-## Monitoring and Maintenance
-
-- The monitoring system tracks the deployed model's performance and sends alerts for anomalies or degradation.
-- Use the maintenance scheduler to plan proactive maintenance activities based on the predicted RUL.
+- The web-based UI provides an intuitive interactive way to get RUL predictions.
+- The web API can be used to integrate it with any other apps as per the requirement
+- Please refer https://www.youtube.com/watch?v=4TJ1UwxALVA
 
 ## Results and Evaluation
 
