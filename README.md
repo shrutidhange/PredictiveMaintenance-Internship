@@ -14,10 +14,9 @@ The Predictive Maintenance System is designed to predict the remaining useful li
 5. [Usage](#usage)
 6. [Model Training](#model-training)
 7. [Web Dashboard](#web-dashboard)
-8. [Monitoring and Maintenance](#monitoring-and-maintenance)
-9. [Results and Evaluation](#results-and-evaluation)
-10. [Contributing](#contributing)
-11. [License](#license)
+8. [Results and Evaluation](#results-and-evaluation)
+9. [Contributing](#contributing)
+10. [License](#license)
 
 ## Introduction
 
@@ -70,7 +69,7 @@ In the industry, prognostics and health management are key topics for anticipati
 
 ## Contributing
 
-We welcome contributions to improve the project. To contribute, please follow the guidelines in the `CONTRIBUTING.md` file.
+We welcome contributions to improve the project. To contribute, please follow the general open source guidelines.
 
 ## License
 
