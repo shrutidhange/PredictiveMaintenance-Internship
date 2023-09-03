@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RUL Prediction Form</title>
+</head>
+<body>
+    <h1>RUL Prediction Form</h1>
+    <form id="prediction-form">
+        <label for="s_2">s_2:</label>
+        <input type="text" id="s_2" name="s_2" value="642.37"><br><br>
+
+        <label for="s_3">s_3:</label>
+        <input type="text" id="s_3" name="s_3" value="1582.85"><br><br>
+
+        <label for="s_4">s_4:</label>
+        <input type="text" id="s_4" name="s_4" value="1406.22"><br><br>
+
+        <label for="s_7">s_7:</label>
+        <input type="text" id="s_7" name="s_7" value="554.0"><br><br>
+
+        <label for="s_8">s_8:</label>
+        <input type="text" id="s_8" name="s_8" value="2388.06"><br><br>
+
+        <label for="s_9">s_9:</label>
+        <input type="text" id="s_9" name="s_9" value="9055.15"><br><br>
+
+        <label for="s_11">s_11:</label>
+        <input type="text" id="s_11" name="s_11" value="47.28"><br><br>
+
+        <label for="s_12">s_12:</label>
+        <input type="text" id="s_12" name="s_12" value="522.19"><br><br>
+
+        <label for="s_13">s_13:</label>
+        <input type="text" id="s_13" name="s_13" value="2388.04"><br><br>
+
+        <label for="s_14">s_14:</label>
+        <input type="text" id="s_14" name="s_14" value="8133.8"><br><br>
+
+        <label for="s_15">s_15:</label>
+        <input type="text" id="s_15" name="s_15" value="8.4294"><br><br>
+
+        <label for="s_17">s_17:</label>
+        <input type="text" id="s_17" name="s_17" value="393"><br><br>
+
+        <label for="s_20">s_20:</label>
+        <input type="text" id="s_20" name="s_20" value="38.9"><br><br>
+
+        <label for="s_21">s_21:</label>
+        <input type="text" id="s_21" name="s_21" value="23.4044"><br><br>
+
+        <label for="s_2_rm">s_2_rm:</label>
+        <input type="text" id="s_2_rm" name="s_2_rm" value="642.37"><br><br>
+
+        <label for="s_3_rm">s_3_rm:</label>
+        <input type="text" id="s_3_rm" name="s_3_rm" value="1582.85"><br><br>
+
+        <label for="s_4_rm">s_4_rm:</label>
+        <input type="text" id="s_4_rm" name="s_4_rm" value="1406.22"><br><br>
+
+        <label for="s_7_rm">s_7_rm:</label>
+        <input type="text" id="s_7_rm" name="s_7_rm" value="554.0"><br><br>
+
+        <label for="s_8_rm">s_8_rm:</label>
+        <input type="text" id="s_8_rm" name="s_8_rm" value="2388.06"><br><br>
+
+        <label for="s_9_rm">s_9_rm:</label>
+        <input type="text" id="s_9_rm" name="s_9_rm" value="9055.15"><br><br>
+
+        <label for="s_11_rm">s_11_rm:</label>
+        <input type="text" id="s_11_rm" name="s_11_rm" value="47.28"><br><br>
+
+        <label for="s_12_rm">s_12_rm:</label>
+        <input type="text" id="s_12_rm" name="s_12_rm" value="522.19"><br><br>
+
+        <label for="s_13_rm">s_13_rm:</label>
+        <input type="text" id="s_13_rm" name="s_13_rm" value="2388.04"><br><br>
+
+        <label for="s_14_rm">s_14_rm:</label>
+        <input type="text" id="s_14_rm" name="s_14_rm" value="8133.8"><br><br>
+
+        <label for="s_15_rm">s_15_rm:</label>
+        <input type="text" id="s_15_rm" name="s_15_rm" value="8.4294"><br><br>
+
+        <label for="s_17_rm">s_17_rm:</label>
+        <input type="text" id="s_17_rm" name="s_17_rm" value="393.0"><br><br>
+
+        <label for="s_20_rm">s_20_rm:</label>
+        <input type="text" id="s_20_rm" name="s_20_rm" value="38.9"><br><br>
+
+        <label for="s_21_rm">s_21_rm:</label>
+        <input type="text" id="s_21_rm" name="s_21_rm" value="23.4044"><br><br>
+
+
+        <input type="submit" value="Predict">
+    </form>
+
+    <div id="prediction-result">
+        <h2>Remaining Useful Life (RUL) Prediction :</h2>
+        <p id="predicted-rul">Loading...</p>
+        <h3>Risk Level:</h3>
+        <p id="risk-level">Calculating...</p>
+    </div>
+
+    <script>
+        function calculateRiskLevel(rul) {
+            if (rul <= 68) {
+                return 'RISK ZONE';
+            } else if (rul <= 137) {
+                return 'MODERATED RISK';
+            } else {
+                return 'NO RISK';
+            }
+        }
+        document.getElementById("prediction-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            
+            // Collect form data
+            var formData = {
+                "s_2": document.getElementById("s_2").value,
+                "s_3": document.getElementById("s_3").value,
+                "s_4": document.getElementById("s_4").value,
+                "s_7": document.getElementById("s_7").value,
+                "s_8": document.getElementById("s_8").value,
+                "s_9": document.getElementById("s_9").value,
+                "s_11": document.getElementById("s_11").value,
+                "s_12": document.getElementById("s_12").value,
+                "s_13": document.getElementById("s_13").value,
+                "s_14": document.getElementById("s_14").value,
+                "s_15": document.getElementById("s_15").value,
+                "s_17": document.getElementById("s_17").value,
+                "s_20": document.getElementById("s_20").value,
+                "s_21": document.getElementById("s_21").value,
+                "s_2_rm": document.getElementById("s_2_rm").value,
+                "s_3_rm": document.getElementById("s_3_rm").value,
+                "s_4_rm": document.getElementById("s_4_rm").value,
+                "s_7_rm": document.getElementById("s_7_rm").value,
+                "s_8_rm": document.getElementById("s_8_rm").value,
+                "s_9_rm": document.getElementById("s_9_rm").value,
+                "s_11_rm": document.getElementById("s_11_rm").value,
+                "s_12_rm": document.getElementById("s_12_rm").value,
+                "s_13_rm": document.getElementById("s_13_rm").value,
+                "s_14_rm": document.getElementById("s_14_rm").value,
+                "s_15_rm": document.getElementById("s_15_rm").value,
+                "s_17_rm": document.getElementById("s_17_rm").value,
+                "s_20_rm": document.getElementById("s_20_rm").value,
+                "s_21_rm": document.getElementById("s_21_rm").value
+            };
+
+            // Make a POST request to the API
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                const predictedRUL = data.prediction
+                const riskLevel = calculateRiskLevel(predictedRUL);
+                document.getElementById('predicted-rul').textContent = `Predicted RUL: ${predictedRUL}`;
+                document.getElementById('risk-level').textContent = `Risk Level: ${riskLevel}`;
+                // Apply color coding based on risk level
+                const resultDiv = document.getElementById('prediction-result');
+                switch (riskLevel) {
+                    case 'RISK ZONE':
+                        resultDiv.style.backgroundColor = 'red';
+                        break;
+                    case 'MODERATED RISK':
+                        resultDiv.style.backgroundColor = 'yellow';
+                        break;
+                    case 'NO RISK':
+                        resultDiv.style.backgroundColor = 'green';
+                        break;
+                    default:
+                        resultDiv.style.backgroundColor = 'white';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
